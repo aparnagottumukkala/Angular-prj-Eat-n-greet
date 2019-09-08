@@ -1,0 +1,29 @@
+<!-- <mat-form-field appearance="outline">
+  <mat-label>Outline form field</mat-label>
+  <input matInput placeholder="Placeholder">
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-hint>Hint</mat-hint>
+</mat-form-field> -->
+<body style="background-color:wheat">
+    <div class="example-container form_bg">
+      <h3 class="heading-css">Eat-N-Greet</h3>
+      <br>
+    <form>
+      <mat-form-field appearance="outline" style="width:100%">
+        <mat-label>Enter Username</mat-label>
+        <input matInput placeholder="Username"  name="adminId" autocomplete="off">
+        <mat-icon class="enter" matSuffix>local_library</mat-icon>
+        <!-- <mat-error *ngIf="!loginForm.controls.adminId.invalid">{{getAdminIdError()}}</mat-error> -->
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline"  style="width:100%">
+        <mat-label>Enter Password</mat-label>
+        <input   matInput placeholder="Password" [type]="hide ? 'password' : 'text'" autocomplete="off">
+        <mat-icon class="enter" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <!-- <mat-error *ngIf="!loginForm.controls.password.invalid">{{getPasswordError()}}</mat-error>  -->
+      </mat-form-field>
+      <div style="height:20px"></div>
+      <button mat-raised-button class="center-button" style="background-color: rgba(62,39,35);color: cornsilk" (click)="onSubmit()">Submit</button>
+     </form> 
+     </div>
+    </body>

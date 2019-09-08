@@ -1,0 +1,46 @@
+<section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+  <!-- <app-header class="mat-elevation-z6"></app-header> -->
+  <!-- <mat-toolbar color="primary">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span style="font-family: 'Pacifico', cursive;">Geotag Admin</span>
+    <span class="fill-space"></span>
+    <button mat-button *ngIf="isLoggedIn" (click)="logout()">
+      Logout
+    </button>
+  </mat-toolbar> -->
+  <mat-toolbar class="fixed-header">
+<mat-toolbar-row>
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    
+  <span style="cursor:pointer" routerLink="/main">Eat-N-Greet</span>
+  <span class="example-spacer"></span>
+  <!-- <button mat-mini-fab matTooltip="Requests" style="background-color: wheat;color: rgba(62,39,35)" routerLink="/main/requests">
+    <mat-icon  >event</mat-icon>
+  </button>&nbsp;&nbsp;
+  <button mat-mini-fab matTooltip="Create Community" style="background-color: wheat;color: rgba(62,39,35)" routerLink="/main/create">
+    <mat-icon  >group_add</mat-icon>
+  </button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+<button mat-button (click)="logout()">
+  Logout
+</button>
+</mat-toolbar-row>
+</mat-toolbar>
+  <!-- <ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul> -->
+  <mat-sidenav-container fxFlex class="docs-component-viewer-sidenav">
+    <mat-sidenav #snav   mode="side"  class="mat-elevation-z6" [fixedInViewport]=true fixedTopGap="56"  style="background-color:rgba(62,39,35)">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let link of links" (click)="goToLink(link); snav.toggle()"  >
+          
+          <a style="color:wheat" matLine><mat-icon class="a">{{link.icon}}</mat-icon>&nbsp;&nbsp;{{ link.name }}</a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+</section>
